@@ -1,24 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unsigned.c                                      :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/22 16:02:47 by moamhouc          #+#    #+#             */
-/*   Updated: 2025/12/22 16:02:48 by moamhouc         ###   ########.fr       */
+/*   Created: 2025/12/22 16:02:20 by moamhouc          #+#    #+#             */
+/*   Updated: 2025/12/22 16:02:21 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_unsigned(unsigned int n)
+static int	convert_hex(unsigned long n)
 {
-	int	count;
+	int		count;
+	char	*str;
+
+	str = "0123456789abcdef";
+	count = 0;
+	if (n > 15)
+		count += convert_hex(n / 16);
+	count += ft_putchar(str[n % 16]);
+	return (count);
+}
+
+int	ft_print_ptr(void *ptr)
+{
+	unsigned long	aderess;
+	int				count;
 
 	count = 0;
-	if (n > 9)
-		count += ft_unsigned(n / 10);
-	count += ft_putchar((n % 10) + 48);
+	if (!ptr)
+	{
+		count += ft_putstr("(nil)");
+		return (count);
+	}
+	aderess = (unsigned long)ptr;
+	count += ft_putstr("0x");
+	count += convert_hex(aderess);
 	return (count);
 }

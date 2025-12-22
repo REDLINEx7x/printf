@@ -5,13 +5,12 @@ AR = ar rcs
 
 NAME = libftprintf.a
 
-SRC = ft_printf.c ft_putnbr.c ft putstr.c ft_putchar.c
+SRC = ft_printf.c ft_putnbr.c ft_putstr.c ft_putchar.c ft_print_lower_hex.c ft_print_upper_hex.c ft_unsigned.c ft_print_ptr.c
 
-OBJ = (SRC:.c=.o)
+OBJ = $(SRC:.c=.o)
 
 %.o : %.c
 	$(CC) $(FLAGS) -c $< -o $@
-
 
 all : $(NAME)
 
@@ -19,10 +18,11 @@ $(NAME) : $(OBJ)
 	$(AR) $(NAME) $(OBJ)
 
 clean :
-	$(RM) $(OBJS)
+	$(RM) $(OBJ)
 
 fclean : clean
 	$(RM) $(NAME)
+
 re : fclean all
 
 .PHONY: all clean fclean bonus re

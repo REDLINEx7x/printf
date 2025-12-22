@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_lower_hex.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/22 16:02:34 by moamhouc          #+#    #+#             */
-/*   Updated: 2025/12/22 21:51:52 by moamhouc         ###   ########.fr       */
+/*   Created: 2025/12/22 15:52:33 by moamhouc          #+#    #+#             */
+/*   Updated: 2025/12/22 21:19:17 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
+int	ft_lower_hex(unsigned long n)
+{
+	int		count;
+	char	*str;
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *str);
-int	ft_putnbr(int n);
-int	ft_lower_hex(unsigned long n);
-int	ft_upper_hex(unsigned long n);
-int	ft_unsigned(unsigned int n);
-int	ft_print_ptr(void *ptr);
-#endif
+	str = "0123456789abcdef";
+	count = 0;
+	if (n > 15)
+		count += ft_lower_hex(n / 16);
+	count += ft_putchar(str[n % 16]);
+	return (count);
+}
