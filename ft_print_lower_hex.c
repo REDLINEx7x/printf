@@ -6,13 +6,13 @@
 /*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 15:52:33 by moamhouc          #+#    #+#             */
-/*   Updated: 2025/12/22 21:19:17 by moamhouc         ###   ########.fr       */
+/*   Updated: 2025/12/23 21:39:49 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_lower_hex(unsigned long n)
+int	ft_lower_hex(unsigned int n)
 {
 	int		count;
 	char	*str;

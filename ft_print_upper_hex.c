@@ -6,13 +6,13 @@
 /*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:02:11 by moamhouc          #+#    #+#             */
-/*   Updated: 2025/12/22 21:18:49 by moamhouc         ###   ########.fr       */
+/*   Updated: 2025/12/23 21:40:01 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_upper_hex(unsigned long n)
+int	ft_upper_hex(unsigned int n)
 {
 	int		count;
 	char	*str;

@@ -6,7 +6,7 @@
 /*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:00:58 by moamhouc          #+#    #+#             */
-/*   Updated: 2025/12/22 21:49:54 by moamhouc         ###   ########.fr       */
+/*   Updated: 2025/12/23 21:35:12 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_printf(const char *format, ...)
 	if (!format)
 		return (-1);
 	if (format[i] == '%' && format[i + 1] == '\0')
-		return (0);
+		return (-1);
 	va_start(list, format);
 	while (format[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:02:20 by moamhouc          #+#    #+#             */
-/*   Updated: 2025/12/22 16:02:21 by moamhouc         ###   ########.fr       */
+/*   Updated: 2025/12/23 21:37:33 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	convert_hex(unsigned long n)
 
 int	ft_print_ptr(void *ptr)
 {
-	unsigned long	aderess;
+	unsigned long	address;
 	int				count;
 
 	count = 0;
@@ -36,8 +36,8 @@ int	ft_print_ptr(void *ptr)
 		count += ft_putstr("(nil)");
 		return (count);
 	}
-	aderess = (unsigned long)ptr;
+	address = (unsigned long)ptr;
 	count += ft_putstr("0x");
-	count += convert_hex(aderess);
+	count += convert_hex(address);
 	return (count);
 }
